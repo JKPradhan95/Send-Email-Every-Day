@@ -1,5 +1,3 @@
-
-
 import yagmail
 import os
 import time
@@ -25,13 +23,13 @@ try:
     while True:
 
         now = dt.now()
-        if now.hour == 17 and now.minute == 5 :
-            
+        if now.hour == 17 and now.minute == 5:
+
             yag = yagmail.SMTP(user=sender, password=password)
-            
+
             yag.send(to=receiver, subject=subject, contents=contents)
             print("Email Sent!")
             time.sleep(60)
 
-except Exception as e:
-    print(f"An error occurred: {e}")
+except Exception as Error:
+    print(f"An error occurred: {Error}")
